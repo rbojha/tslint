@@ -2,6 +2,5 @@
 .tscache/
 build/
 bin/tslint-cli.js
-lib/tslint.js
 node_modules/
 tscommand*.txt

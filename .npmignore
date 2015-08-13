@@ -2,6 +2,7 @@
 .gitmodules
 .project
 .travis.yml
+appveyor.yml
 .tslintrc
 Gruntfile.js
 tslint.json
