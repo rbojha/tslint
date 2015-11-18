@@ -18,14 +18,14 @@ import * as ts from "typescript";
 import * as Lint from "../lint";
 
 export class Rule extends Lint.Rules.AbstractRule {
-    public static FAILURE_STRING = "forbidden internal module";
+    public static FAILURE_STRING = "forbidden module keyword";
 
     public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
-        return this.applyWithWalker(new NoInternalModuleWalker(sourceFile, this.getOptions()));
+        return this.applyWithWalker(new NoModuleKeywordWalker(sourceFile, this.getOptions()));
     }
 }
 
-class NoInternalModuleWalker extends Lint.RuleWalker {
+class NoModuleKeywordWalker extends Lint.RuleWalker {
     public visitModuleDeclaration(node: ts.ModuleDeclaration) {
         if (this.isInternalModuleDeclaration(node)) {
             this.addFailure(this.createFailure(node.getStart(), node.getWidth(), Rule.FAILURE_STRING));

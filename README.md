@@ -169,9 +169,9 @@ A sample configuration file with all options is available [here](https://github.
 * `no-duplicate-variable` disallows duplicate variable declarations in the same block scope.
 * `no-empty` disallows empty blocks.
 * `no-eval` disallows `eval` function invocations.
-* `no-inferrable-types` disallows explicit type declarations for variables or parameters initialized to a number, string, or boolean
-* `no-internal-module` disallows internal `module`, use `namespace` instead.
-* `no-require-imports` disallows require() style imports.
+* `no-inferrable-types` disallows explicit type declarations for variables or parameters initialized to a number, string, or boolean.
+* `no-module-keyword` disallows the `module` keyword (prefer `namespace`).
+* `no-require-imports` disallows `require()` style imports (prefer ES6 syntax).
 * `no-shadowed-variable` disallows shadowed variable declarations.
 * `no-string-literal` disallows object access via string literals.
 * `no-switch-case-fall-through` disallows falling through case statements.

@@ -72,7 +72,7 @@
         "rules/noEmptyRule.ts",
         "rules/noEvalRule.ts",
         "rules/noInferrableTypesRule.ts",
-        "rules/noInternalModuleRule.ts",
+        "rules/noModuleKeywordRule.ts",
         "rules/noRequireImportsRule.ts",
         "rules/noShadowedVariableRule.ts",
         "rules/noStringLiteralRule.ts",

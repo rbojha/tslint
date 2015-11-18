@@ -13,15 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import * as Lint from "../lint";
 
-describe("<no-internal-module>", () => {
-    const NoInternalModule = Lint.Test.getRule("no-internal-module");
-    const fileName = "rules/nointernalmodule.test.ts";
-    const failureString = NoInternalModule.FAILURE_STRING;
+describe("<no-module-keyword>", () => {
+    const NoModuleKeyword = Lint.Test.getRule("no-module-keyword");
+    const fileName = "rules/nomodulekeyword.test.ts";
+    const failureString = NoModuleKeyword.FAILURE_STRING;
 
-    it("forbids internal module", () => {
-        const actualFailures = Lint.Test.applyRuleOnFile(fileName, NoInternalModule);
+    it("forbids module keyword", () => {
+        const actualFailures = Lint.Test.applyRuleOnFile(fileName, NoModuleKeyword);
         const expectedFailures = [
             Lint.Test.createFailure(fileName, [4, 1], [4, 15], failureString),
             Lint.Test.createFailure(fileName, [7, 1], [7, 24], failureString),
