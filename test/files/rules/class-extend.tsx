@@ -21,7 +21,3 @@ export class OneMoreClass extends BaseComponent {
 export default class {
     // should not fail
 }
-
-export default class extends React.Component<{}, {}> {
-	// Should Fail
-}

@@ -18,16 +18,7 @@ class NoReactComponentExtendWalker extends Lint.RuleWalker {
                         if (node.name !== undefined) {
                             this.addFailure(this.createFailure(node.name.getStart(), node.name.getWidth(), Rule.FAILURE_STRING));
                         } else {
-                            // console.log("child-0 ", node.getChildAt(0).getText());
-                            // console.log("child-1 ", node.getChildAt(1).getText());
-                            // console.log("child-2 ", node.getChildAt(2).getText());
-                            // console.log("child-3 ", node.getChildAt(3).getText());
-                            // console.log("child-4 ", node.getChildAt(4).getText());
-                            // console.log("child-5 ", node.getChildAt(5).getText());
-                            // console.log("child ", node.getChildren().indexOf(node.getChildAt(1)));
-                            // let s = node.getChildAt(0).getText().length + 1
-                            // this.addFailure(this.createFailure(node.getChildAt(0).getText().length + 1,
-                            //     node.getEnd(), Rule.FAILURE_STRING));
+                            this.addFailure(this.createFailure(node.getStart(), node.getEnd(), Rule.FAILURE_STRING));
                         }
                     }
                 });
