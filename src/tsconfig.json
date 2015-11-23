@@ -64,6 +64,7 @@
         "rules/noAnyRule.ts",
         "rules/noArgRule.ts",
         "rules/noBitwiseRule.ts",
+        "rules/noClassExtendReactComponentRule.ts",
         "rules/noConditionalAssignmentRule.ts",
         "rules/noConsecutiveBlankLinesRule.ts",
         "rules/noConsoleRule.ts",
