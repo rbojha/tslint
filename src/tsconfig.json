@@ -69,6 +69,7 @@
         "rules/noConsecutiveBlankLinesRule.ts",
         "rules/noConsoleRule.ts",
         "rules/noConstructRule.ts",
+        "rules/noConstructorParameterRule.ts",
         "rules/noConstructorVarsRule.ts",
         "rules/noDebuggerRule.ts",
         "rules/noDuplicateKeyRule.ts",
