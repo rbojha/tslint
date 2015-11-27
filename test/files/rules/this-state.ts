@@ -36,3 +36,14 @@ class ClassFour extends BaseComponent {
     }
     // Should not Fail
 }
+
+class ClassThree extends React.Component {
+    public componentDidMount(): void {
+        let a = [1, 2];
+        a.map((x) => {
+            x = x + 1;
+        });
+        this.state = {};
+    }
+    // Should not Fail
+}

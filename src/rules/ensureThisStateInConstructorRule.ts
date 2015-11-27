@@ -10,8 +10,23 @@ export class Rule extends Lint.Rules.AbstractRule {
 }
 
 class MethodWalker extends Lint.RuleWalker {
+    private extendsBaseComponent: boolean;
+    public visitClassDeclaration(node: ts.ClassDeclaration): void {
+        this.extendsBaseComponent = false;
+        if (node.heritageClauses) {
+            node.heritageClauses.forEach((heritageClauses) => {
+                heritageClauses.types.forEach((type) => {
+                    if (type.expression.getText() === "BaseComponent") {
+                        this.extendsBaseComponent = true;
+                    }
+                });
+            });
+        }
+        super.visitClassDeclaration(node);
+    }
     public visitMethodDeclaration(node: ts.MethodDeclaration): void {
-        if (node.body.statements !== undefined && node.body.statements.length > 0) {
+        if (this.extendsBaseComponent
+            && node.body.statements !== undefined && node.body.statements.length > 0) {
             node.body.statements.forEach((statement) => {
                 if (statement.getText().indexOf("this.state =") >= 0) {
                     this.addFailure(this.createFailure(node.name.getStart(), node.name.getWidth(), Rule.FAILURE_STRING));
