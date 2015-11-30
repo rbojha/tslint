@@ -55,18 +55,7 @@ class RenderIntoDocumentWalker extends Lint.RuleWalker {
         super.visitNamespaceImport(node);
     }
 
-    public visitArrowFunction(node: ts.FunctionLikeDeclaration): void {
-        // const parent = node.parent;
-        const body = node.body;
-        console.log("Body", body.statements);
-        // if (body != null && body.kind === ts.SyntaxKind.Block) {
-        //     // console.log("StateMents", body.statements);
-        // }
-        // if (parent.expression === IT) {
-        //     body.statements.forEach((statement) => {
-        //         console.log(statement);
-        //     })
-        // }
-        super.visitArrowFunction(node);
+    public visitCallExpression(node: ts.CallExpression): void {
+        console.log("visitCallExpression: ", node);
     }
 }

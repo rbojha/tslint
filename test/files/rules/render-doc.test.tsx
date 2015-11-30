@@ -25,10 +25,9 @@ class ClassFour extends BaseComponent {
 describe("Language", () => {
     it("should validate undefined", () => {
         let a: string;
-        expect(P.isUndefined(undefined)).toBe(true);
         expect(P.isUndefined(a)).toBe(true);
-        expect(P.isUndefined(10)).toBe(false);
-        expect(P.isUndefined({})).toBe(false);
-        expect(() => ComponentUtil.renderComponent(<Panel3></Panel3>)).not.toThrow();
+        renderIntoDocument(<Panel3></Panel3>);
+        TestUtils.renderIntoDocument(<Panel3></Panel3>);
+        expect(() => renderIntoDocument(<Panel3></Panel3>)).not.toThrow();
     });
 });
