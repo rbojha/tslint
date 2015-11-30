@@ -49,20 +49,16 @@ class RenderIntoDocumentWalker extends Lint.RuleWalker {
     public visitCallExpression(node: ts.CallExpression): void {
         const expression = node.expression;
         const expressionText = expression.getText();
-        if (expressionText === RENDER_INTO_DOCUMENT) {
-            if (this.isFunctionImported) {
-                this.addFailure(this.createFailure(node.getStart(), node.getEnd(), Rule.FAILURE_STRING));
-            }
+        if (this.isFunctionImported === true && expressionText === RENDER_INTO_DOCUMENT) {
+            this.addFailure(this.createFailure(node.getStart(), node.getEnd(), Rule.FAILURE_STRING));
         }
 
-        if (expressionText.indexOf(RENDER_INTO_DOCUMENT) > 0) {
-            if (this.isNamespaceImported) {
-                this.localModuleNames.forEach((localName) => {
-                    const localExpression = localName + "." + RENDER_INTO_DOCUMENT;
-                    if (expression.getText() === localExpression) {
-                        this.addFailure(this.createFailure(node.getStart(), node.getEnd(), Rule.FAILURE_STRING));
-                    }
-                });
+        if (this.isNamespaceImported === true && expressionText.indexOf(RENDER_INTO_DOCUMENT) > 0) {
+            for (let localName of this.localModuleNames) {
+                let localExpression = localName + "." + RENDER_INTO_DOCUMENT;
+                if (expression.getText() === localExpression) {
+                    this.addFailure(this.createFailure(node.getStart(), node.getEnd(), Rule.FAILURE_STRING));
+                }
             }
         }
 

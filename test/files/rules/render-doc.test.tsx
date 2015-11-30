@@ -1,7 +1,7 @@
 import * as banana from "react-addons-test-utils";
 import * as apple from "react-addons-test-utils";
-// import {renderIntoDocument, ojha, ComponentUtil} from "react-addons-test-utils";
-import {renderIntoDocument} from "one-import";
+import {renderIntoDocument, ojha, ComponentUtil} from "react-addons-test-utils";
+// import {renderIntoDocument} from "one-import";
 import * as orange from "some-import";
 import * as P from "./lang";
 import * as abc from "xyz";
