@@ -1,0 +1,1 @@
+import { Ele1, Elem2, InternalElem } from "../somefile";

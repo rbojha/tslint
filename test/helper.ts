@@ -28,6 +28,9 @@ export function getSourceFile(fileName: string): ts.SourceFile {
 
 export function getRule(ruleName: string) {
     const rulesDirectory = path.join(path.dirname(module.filename), "../src/rules");
+    if (ruleName === "internal-component") {
+        console.log("hello there", ruleName, rulesDirectory);
+    }
     return Lint.findRule(ruleName, rulesDirectory);
 }
 
